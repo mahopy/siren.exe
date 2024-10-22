@@ -186,6 +186,7 @@ from gather_information import (
 )
 from verify_requirements import verify_requirements
 from print_information import print_all_information
+from create_zeek_input import extract_communications
 
 
 def open_file_dialog() -> str:
@@ -327,6 +328,7 @@ def main():
     valid_requirements = verify_requirements(pools)
     if valid_requirements:
         print_all_information(pools)
+        #extract_communications(pools)
 
 
 if __name__ == "__main__":
