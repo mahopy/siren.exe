@@ -76,6 +76,8 @@ def get_events(process, data_objects):
 
         event_id = intermediate_throw_event.get('id')
         events[event_id] = Event(id=event_id)
+        #print(event_id)
+
 
         data_input_associations = intermediate_throw_event.findall('bpmn:dataInputAssociation', namespaces)
         for data_input_association in data_input_associations:
@@ -165,3 +167,6 @@ def add_requirements_to_lane(xml_string, search_element, lane, data_object_with_
                 and coord.y_end < lane_coordinates.y_end):
             lane.add_requirement(data_objects[key])
             # print(f'Adding: {data_objects[key].name} to {lane.name}')
+
+
+    return "test"

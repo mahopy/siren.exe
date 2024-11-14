@@ -182,7 +182,7 @@ from gather_information import (
     add_events_to_lane,
     add_tasks_to_lane,
     get_data_objects_with_coordinates,
-    add_requirements_to_lane
+    add_requirements_to_lane,
 )
 from verify_requirements import verify_requirements
 from print_information import print_all_information
@@ -327,8 +327,8 @@ def main():
     # Verify and print valid requirements
     valid_requirements = verify_requirements(pools)
     if valid_requirements:
-        print_all_information(pools)
-        #extract_communications(pools)
+        #print_all_information(pools)
+        extract_communications(pools)
 
 
 if __name__ == "__main__":
