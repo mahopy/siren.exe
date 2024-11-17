@@ -1,6 +1,7 @@
 from typing import List, Dict
 from bpmn_elements import *
 
+
 # Define the namespaces
 namespaces = {
     'bpmn': 'http://www.omg.org/spec/BPMN/20100524/MODEL',
@@ -69,16 +70,38 @@ def add_text_annotations_to_requirements(xml_string,
     return data_objects
 
 
-def get_events(process, data_objects):
+def get_events(process ,file_string, data_objects):
     events: Dict[str, Event] = {}
+   # print(file_string)
     intermediate_throw_events = process.findall('bpmn:intermediateThrowEvent', namespaces)
+    flows = file_string.findall('bpmn:collaboration', namespaces)
+  #  print(flows)
     for intermediate_throw_event in intermediate_throw_events:
 
         event_id = intermediate_throw_event.get('id')
         events[event_id] = Event(id=event_id)
         #print(event_id)
-
-
+        receiver_name = ""
+        receiver_id = ""
+        for flow in flows:
+            print('FLow')
+            messages = flow.findall('bpmn:messageFlow', namespaces)
+            for message in messages:
+                match = message.get("sourceRef")
+                if match == event_id:
+                  #  events[event_id].receiver = message.get("targetRef")
+                    receiver_id =  message.get("targetRef")
+                    events[event_id].receiver_id = message.get("targetRef")
+        # Search for receiver IP based on the participant name
+        for flow in flows:
+            participants = flow.findall('bpmn:participant', namespaces)
+            for parti in participants:
+                id =  parti.get("id")
+                name = parti.get("name")
+                print(f"NAME FOUND: {name}")
+                if id == receiver_id:
+                    receiver_name = name
+                    events[event_id].receiver_name = name
         data_input_associations = intermediate_throw_event.findall('bpmn:dataInputAssociation', namespaces)
         for data_input_association in data_input_associations:
             data_object_reference = get_text(xml_string=data_input_association, search_element='bpmn:sourceRef')

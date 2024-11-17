@@ -188,6 +188,7 @@ from verify_requirements import verify_requirements
 from print_information import print_all_information
 from create_zeek_input import extract_communications
 
+file_string = ""
 
 def open_file_dialog() -> str:
     """Open a file dialog and allow the user to select an XML file."""
@@ -239,7 +240,7 @@ def add_requirements_to_events_and_tasks(root: ET.Element, pools: Dict[str, Pool
         pool_id = process.get('id')
         current_pool = pools[pool_id]
 
-        events: Dict[str, Event] = get_events(process, data_objects=data_objects)
+        events: Dict[str, Event] = get_events(process,root, data_objects=data_objects)
         tasks: Dict[str, Task] = get_tasks(process, data_objects=data_objects)
 
         lane_sets = find_all(xml_string=process, search_element='bpmn:laneSet')
@@ -305,7 +306,7 @@ def add_requirements_to_resources(root: ET.Element, pools: Dict[str, Pool], data
 def main():
     file_path = open_file_dialog()
     root = get_xml(file_path)
-
+    file_string = root
     text_annotations = find_annotations(root)
     data_objects = find_data_objects(root)
     pools = find_pools(root)

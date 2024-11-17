@@ -53,10 +53,14 @@ class Task(Element):
 class Event(Element):
     def __init__(self, id: str):
         super().__init__(id)
-
+        self.sender = ""
+        self.receiver = ""
+        self.receiver_name = ""
+        self.receiver_id = ""
     def add_event_infos(self, sender, receiver):
         print(f"Added INFO: {receiver}")
-
+        self.sender = sender
+        self.receiver = receiver
 
 class Pool(Element):
     def __init__(self, id: str, name: str, process_ref: str = None):
