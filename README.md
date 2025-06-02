@@ -20,3 +20,6 @@ This module checks the information extracted out of the XML and checks if they a
 ## Results
 The prototype shows how the modeling language can be integrated into existing BPMN based prototypes, and demonstrates a vision for modeling security-related attributes within business processes.
 The resulting syntax-transformer can be used as an API to extract the relevant attributes from the BPMN and connect it to an arbitrary Python-based tool.
+
+## Demonstration (Usage of the SIREN modeler with the existing Prototype)
+
