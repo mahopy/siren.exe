@@ -1,0 +1,2 @@
+sender	sender_p	receiver	receiver_p	protocol	requirements
+ 172.217.169.238	8833	 172.217.168.111	8833	mqtt	['protocol_type: mqtt;', 'cryptography_used: true;']
