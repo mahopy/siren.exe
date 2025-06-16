@@ -22,12 +22,21 @@ The prototype shows how the modeling language can be integrated into existing BP
 The resulting syntax-transformer can be used as an API to extract the relevant attributes from the BPMN and connect it to an arbitrary Python-based tool.
 
 ## Demonstration (Usage of the SIREN modeler with the existing Prototype)
+
 ### 1. Example Use Case in Camunda
 ![image](https://github.com/user-attachments/assets/63216242-bcb1-4adc-81cd-6c5139035bed)
 Note: See the requirements modelled as Camunda-Annotations, as defined by the Siren.exe modelling language
+
 ### 2. Select Input (xml, or bpmn file (Export from Camunda)
 ![image](https://github.com/user-attachments/assets/b8d192c4-616d-4344-a655-299774e4b3d6)
+
 ### 3. Create Input for the Zeek Prototype (see Zeek-Monitor Github)
+The language checks the input, if it matches the modelling language. 
+In the Use Case there is only one communication (Pool 1 to Pool 2) using the MQTT Protocol. 
+It checks for Siren conformity, then creates the .tsv input for the Zeek-Monitor (Related Work).
+
+See: 
+
 
 ### 4. SIREN conformity checking
 ![image](https://github.com/user-attachments/assets/0d913a0d-4c66-4549-aff4-90243b8d0861)
