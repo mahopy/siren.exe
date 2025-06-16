@@ -11,7 +11,7 @@ The SIREN modeling language was added in a two-fold way:
 extracting the BPMN-Information out of the XML-tree, and saving it into the python environment. This is based on the SIREN modeling language.
 
 ### create_zeek_input.py
-This module creates a tsv input, based on the previously gathered information. This output can then be used as an input for the Zeek Prototype found here: https://github.com/TODO
+This module creates a tsv input, based on the previously gathered information. This output can then be used as an input for the Zeek Prototype found here: https://github.com/Blinded
 
 ### verify_requirements.py
 This module checks the information extracted out of the XML and checks if they are in comformity with the SIREN modeling language.
@@ -22,4 +22,13 @@ The prototype shows how the modeling language can be integrated into existing BP
 The resulting syntax-transformer can be used as an API to extract the relevant attributes from the BPMN and connect it to an arbitrary Python-based tool.
 
 ## Demonstration (Usage of the SIREN modeler with the existing Prototype)
+### 1. Example Use Case in Camunda
+![image](https://github.com/user-attachments/assets/63216242-bcb1-4adc-81cd-6c5139035bed)
+Note: See the requirements modelled as Camunda-Annotations, as defined by the Siren.exe modelling language
+### 2. Select Input (xml, or bpmn file (Export from Camunda)
+![image](https://github.com/user-attachments/assets/b8d192c4-616d-4344-a655-299774e4b3d6)
+### 3. Create Input for the Zeek Prototype (see Zeek-Monitor Github)
+
+### 4. SIREN conformity checking
+![image](https://github.com/user-attachments/assets/0d913a0d-4c66-4549-aff4-90243b8d0861)
 
