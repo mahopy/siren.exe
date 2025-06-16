@@ -39,5 +39,6 @@ https://github.com/mahopy/siren.exe/blob/main/Use%20Case/zeek_input_use_case.tsv
 
 
 ### 4. SIREN conformity checking
+In this Use Case we changed the Base Information of the Sender, by omitting the ":" separating key-value, and therefore not being conform with the modelling language.
 ![image](https://github.com/user-attachments/assets/0d913a0d-4c66-4549-aff4-90243b8d0861)
 
