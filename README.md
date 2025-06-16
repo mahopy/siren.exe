@@ -37,6 +37,7 @@ It checks for Siren conformity, then creates the .tsv input for the Zeek-Monitor
 
 https://github.com/mahopy/siren.exe/blob/main/Use%20Case/zeek_input_use_case.tsv
 
+This input can be used in the Zeek-Tool found here: https://github.com/DanielOberhofer/Compliance_Monitoring_with_Zeek
 
 ### 4. SIREN conformity checking
 In this Use Case we changed the Base Information of the Sender, by omitting the ":" separating key-value, and therefore not being conform with the modelling language.
