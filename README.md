@@ -35,7 +35,7 @@ The language checks the input, if it matches the modelling language.
 In the Use Case there is only one communication (Pool 1 to Pool 2) using the MQTT Protocol. 
 It checks for Siren conformity, then creates the .tsv input for the Zeek-Monitor (Related Work).
 
-[See: ](https://github.com/mahopy/siren.exe/blob/main/Use%20Case/zeek_input_use_case.tsv)
+https://github.com/mahopy/siren.exe/blob/main/Use%20Case/zeek_input_use_case.tsv
 
 
 ### 4. SIREN conformity checking
